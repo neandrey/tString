@@ -7,22 +7,10 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    
-//    set<String> s;
-
-    // for (String temp; cin >> temp; )
-    //     s.insert(temp);
-
 
     String s;
     cin >> s;
-    cin >> s;
-
+    cout << s << endl;
     
-    for (auto c : s)
-        cout << c << " ";
-    cout << endl;
-    
-
     return 0;
 }
