@@ -67,6 +67,8 @@ void String::reallocate() {
 istream& operator>>(istream &is, String &s) {
     
     for (char c; (c = is.get()) != '\n'; ) {
+        if(c == EOF)
+            break;
         s.push_back(c);
     }
     return is;
@@ -77,4 +79,21 @@ ostream& operator<<(ostream &os, const String &s) {
 	for (auto c : s)
 		os << c;
 	return os;
+}
+
+bool operator==(const String &lhs, const String &rhs) {
+
+	return (lhs.size() == rhs.size() &&
+			std::equal(lhs.begin(), lhs.end(), rhs.begin()));
+}
+
+bool operator!=(const String &lhs, const String &rhs) {
+
+	return !(lhs == rhs);	
+}
+
+bool operator<(const String &lhs, const String &rhs) {
+
+	return std::lexicographical_compare(lhs.begin(), lhs.end(), 
+										rhs.begin(), rhs.end());
 }

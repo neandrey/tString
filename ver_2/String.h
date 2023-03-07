@@ -9,6 +9,9 @@ class String{
 friend istream &operator>>(istream&, String&);
 friend ostream &operator<<(ostream&, const String&);
 friend String operator+(const String&, const String&);
+friend bool operator==(const String&, const String&);
+friend bool operator!=(const String&, const String&);
+friend bool operator<(const String&, const String&);
 public:
     String():
         elements(nullptr), first_free(nullptr), cap(nullptr) {}
