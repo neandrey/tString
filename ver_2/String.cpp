@@ -66,7 +66,7 @@ void String::reallocate() {
 
 istream& operator>>(istream &is, String &s) {
     
-    for (char c; (c = is.get()) != '\n'; ) {
+    for (char c; (c = is.get()), c != ' ' and c != '\n'; ) {
         if(c == EOF)
             break;
         s.push_back(c);

@@ -1,16 +1,22 @@
 #include <iostream>
 #include <set>
 #include "String.h"
-#include <string>
 
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
 
-    String s;
-    cin >> s;
-    cout << s << endl;
+    set<String> my_set;
+    for(String temp; cin >> temp; ){
+        my_set.insert(temp);
+        temp="";
+    }
+
+    for(auto s : my_set){
+        cout << s << " ";
+    }
+    cout << endl;
     
     return 0;
 }
